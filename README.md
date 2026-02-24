@@ -10,7 +10,7 @@ Este repositorio ha sido desarrollado para documentar y organizar las practicas,
 El curso se divide en cinco unidades tematicas. Cada carpeta contiene la documentacion teorica y los archivos de implementacion (Excel o codigo) respectivos.
 
 | Unidad | Titulo | Descripcion |
-| :--- | :--- | :--- | :--- |
+| :--- | :--- | :--- | 
 | [**Unidad 1**](./Tema%201/) | Introduccion a los metodos numericos | Analisis de tipos de errores, precision y cifras significativas. | 
 | [**Unidad 2**](./Tema_2/) | Ecuaciones no lineales | Implementacion de metodos de intervalos (Biseccion, Regla Falsa) y metodos abiertos. | 
 | **Unidad 3** | Sistemas de ecuaciones lineales | Solucion de sistemas mediante metodos directos e iterativos. | Pendiente |
