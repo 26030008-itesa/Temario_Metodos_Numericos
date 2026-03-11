@@ -109,3 +109,23 @@ if __name__ == "__main__":
         print(f"Error: {error}")
         print(f"Tiempo de ejecución (hasta fallar): {tiempo_total:.8f} segundos")
 
+
+# Calculando la solución...
+
+# ¡Archivo leído! Se detectó un sistema de 1000x1000.
+
+# Calculando la solución...
+# Muestra de la solución:
+# Variable x1 = 0.9832
+# Variable x2 = -2.2567
+# Variable x3 = 2.4610
+# Variable x4 = 1.4385
+# Variable x5 = -0.2403
+# ...
+# Variable x996 = -0.4956
+# Variable x997 = -0.3388
+# Variable x998 = -1.0961
+# Variable x999 = -0.6473
+# Variable x1000 = -3.3818
+# ------------------------------
+# Tiempo de ejecución: 42.11466420 segundos

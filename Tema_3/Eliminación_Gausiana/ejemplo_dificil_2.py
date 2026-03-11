@@ -110,4 +110,13 @@ if __name__ == "__main__":
         print(f"Tiempo de ejecución (hasta fallar): {tiempo_total:.8f} segundos")
 
 
+##############################################
+# Calculando la solución...
 
+# ¡Archivo leído! Se detectó un sistema de 1000x1000.
+
+# Calculando la solución...
+# ------------------------------
+# Error: El sistema no tiene solución única. El pivote en la columna 1000 es cero (o demasiado cercano a cero).
+# Tiempo de ejecución (hasta fallar): 44.80114850 segundos
+###################################################
