@@ -46,12 +46,10 @@ def gauss_jordan(A, b):
         
     return x
 
-# =================================================================
-# ÁREA DE PRUEBAS
-# =================================================================
+
 
 if __name__ == "__main__":
-    
+
     matriz_coeficientes = [
         [1.0, 2.0, 3.0],
         [2.0, 4.0, 6.0],
@@ -87,9 +85,6 @@ if __name__ == "__main__":
 
 # Calculando la solución con Gauss-Jordan...
 
-# La solución del sistema es:
-# Variable x1 = 2.0000
-# Variable x2 = 3.0000
-# Variable x3 = -1.0000
 # ------------------------------
-# Tiempo de ejecución: 0.00003930 segundos
+# Error: El sistema no tiene solución única. El pivote en la columna 3 es muy cercano a cero.
+# Tiempo de ejecución (hasta fallar): 0.00005270 segundos

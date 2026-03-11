@@ -54,7 +54,7 @@ if __name__ == "__main__":
     directorio_script = os.path.dirname(os.path.abspath(__file__))
     directorio_padre = os.path.dirname(directorio_script)
 
-    nombre_archivo = "matriz_normal.txt"
+    nombre_archivo = "matriz_dominante.txt"
 
     ruta_completa = os.path.join(directorio_padre, nombre_archivo)
 

@@ -59,7 +59,7 @@ if __name__ == "__main__":
     directorio_padre = os.path.dirname(directorio_script)
     
     # *** CAMBIA ESTE NOMBRE PARA PROBAR LOS DISTINTOS CASOS ***
-    nombre_archivo = "matriz_desacomodada.txt" 
+    nombre_archivo = "matriz_dominante_desordenada.txt" 
     
     ruta_completa = os.path.join(directorio_padre, nombre_archivo)
     
@@ -127,3 +127,34 @@ if __name__ == "__main__":
 # ------------------------------
 # Tiempo de ejecución: 54.11300050 segundos
 # PS C:\Users\Abram\Downloads\Tema 2\Tema_3> 
+
+
+
+#### Matriz dominante
+
+
+
+# ¡Archivo leído! Se detectó un sistema de 1000x1000.
+
+# Calculando la solución con Gauss-Jordan...
+
+# Muestra de la solución:
+# Variable x1 = 0.0005
+# Variable x2 = -0.0008
+# Variable x3 = -0.0010
+# Variable x4 = 0.0007
+# Variable x5 = -0.0005
+# ...
+# Variable x996 = -0.0017
+# Variable x997 = 0.0011
+# Variable x998 = 0.0011
+# Variable x999 = -0.0001
+# Variable x1000 = -0.0002
+# ------------------------------
+# Tiempo de ejecución: 56.42411010 segundos
+# PS C:\Users\Abram\Downloads\Tema 2\Tema_3> 
+
+
+
+
+
