@@ -45,10 +45,6 @@ def eliminacion_gaussiana(A, b):
 
 
 if __name__ == "__main__":
-    # Sistema de ejemplo:
-    #  2x +  y -  z =   8
-    # -3x -  y + 2z = -11
-    # -2x +  y + 2z =  -3
 
     matriz_coeficientes = [
         [0.0,  1.0,  1.0],

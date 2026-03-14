@@ -138,6 +138,6 @@ if __name__ == "__main__":
 # Variable x998 = 0.0011
 # Variable x999 = -0.0001
 # Variable x1000 = -0.0002
-# ------------------------------
+# ------------------------------ 
 # Tiempo de ejecución: 37.06926130 segundos
 # PS C:\Users\Abram\Downloads\Tema 2\Tema_3> 
