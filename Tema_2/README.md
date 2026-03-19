@@ -1,6 +1,6 @@
 # Tema 2: Algoritmos para la Aproximación de Raíces
 
-[cite_start]Este apartado detalla los fundamentos teóricos y las fórmulas aplicadas para resolver ecuaciones no lineales de la forma $f(x) = 0$[cite:2]. [cite_start]El objetivo es encontrar el valor de $x$ que anula la función, una operación crítica para simulaciones y optimización en ingeniería[cite:2].
+Este apartado detalla los fundamentos teóricos y las fórmulas aplicadas para resolver ecuaciones no lineales de la forma $f(x) = 0$. El objetivo es encontrar el valor de $x$ que anula la función, una operación crítica para simulaciones y optimización en ingeniería.
 
 ## 1. Métodos Cerrados (o de Intervalo)
 
@@ -9,14 +9,13 @@
 ### A. Método de Bisección
 Es el algoritmo más elemental y seguro. [cite_start]Consiste en dividir el intervalo a la mitad repetidamente hasta reducir el error a un nivel aceptable[cite:2].
 
-
-[cite_start]**Algoritmo:**
-1. Elegir valores iniciales $a$ y $b$ que encierren la raíz.
-2. [cite_start]Calcular el punto medio $x_r$.
+**Algoritmo:**
+1. Elegir valores iniciales $a$ y $b$ que encierren la raíz ($f(a) \cdot f(b) < 0$).
+2. Calcular el punto medio $x_r$.
 3. Determinar el subintervalo de búsqueda:
-   - [cite_start]Si $f(a) \cdot f(x_r) < 0$, la raíz está a la izquierda; el nuevo $b = x_r$.
-   - [cite_start]Si $f(a) \cdot f(x_r) > 0$, la raíz está a la derecha; el nuevo $a = x_r$.
-4. [cite_start]Repetir hasta alcanzar la tolerancia deseada.
+   - Si $f(a) \cdot f(x_r) < 0$, la raíz está a la izquierda; el nuevo $b = x_r$.
+   - Si $f(a) \cdot f(x_r) > 0$, la raíz está a la derecha; el nuevo $a = x_r$.
+4. Repetir hasta alcanzar la tolerancia deseada.
 
 **Pseudocódigo:**
 ```text
@@ -30,9 +29,6 @@ Función Bisección(a, b, tol):
     Retornar xr
 Fin Función 
 ```
-
-
-
 
 **Fórmula del punto medio:**
 $$x_r = \frac{a + b}{2}$$
