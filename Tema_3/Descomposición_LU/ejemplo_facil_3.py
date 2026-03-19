@@ -3,17 +3,17 @@ import time
 def descomposicion_lu(A, b):
     n = len(A)
     
-    # 1. Crear matrices vacías L y U
+    
     L = [[0.0] * n for _ in range(n)]
     U = [[0.0] * n for _ in range(n)]
     
-    # Poner 1s en la diagonal principal de L
+    
     for i in range(n):
         L[i][i] = 1.0
 
-    # 2. Proceso de Descomposición (Fabricar L y U)
+   
     for i in range(n):
-        # Llenar la fila 'i' de la matriz U
+       
         for j in range(i, n):
             suma = sum(L[i][k] * U[k][j] for k in range(i))
             U[i][j] = A[i][j] - suma

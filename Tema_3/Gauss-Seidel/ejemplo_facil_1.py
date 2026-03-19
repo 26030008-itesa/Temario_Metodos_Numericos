@@ -1,19 +1,16 @@
 import time
 
 def ordenar_diagonal(A, b):
-    """
-    Intenta reordenar las filas de la matriz para que sea diagonalmente dominante,
-    colocando el valor absoluto más grande de cada columna en la diagonal.
-    """
+   
     n = len(b)
     for i in range(n):
-        # Buscar la fila (desde i hasta n) con el valor absoluto más grande en la columna i
+       
         max_row = i
         for k in range(i, n):
             if abs(A[k][i]) > abs(A[max_row][i]):
                 max_row = k
                 
-        # Intercambiar la fila actual con la mejor fila encontrada
+       
         A[i], A[max_row] = A[max_row], A[i]
         b[i], b[max_row] = b[max_row], b[i]
         

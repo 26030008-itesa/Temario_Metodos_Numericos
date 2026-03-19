@@ -3,35 +3,35 @@ import time
 def descomposicion_lu(A, b):
     n = len(A)
     
-    # 1. Crear matrices vacías L y U
+    
     L = [[0.0] * n for _ in range(n)]
     U = [[0.0] * n for _ in range(n)]
     
-    # Poner 1s en la diagonal principal de L
+   
     for i in range(n):
         L[i][i] = 1.0
 
-    # 2. Proceso de Descomposición (Fabricar L y U)
+   
     for i in range(n):
-        # Llenar la fila 'i' de la matriz U
+       
         for j in range(i, n):
             suma = sum(L[i][k] * U[k][j] for k in range(i))
             U[i][j] = A[i][j] - suma
             
-        # Llenar la columna 'i' de la matriz L
+       
         for j in range(i + 1, n):
             if U[i][i] == 0:
                 raise ValueError(f"Cero detectado en U[{i}][{i}]. Este algoritmo de LU básico fallará sin pivoteo.")
             suma = sum(L[j][k] * U[k][i] for k in range(i))
             L[j][i] = (A[j][i] - suma) / U[i][i]
 
-    # 3. Resolver Ly = b (Sustitución hacia adelante)
+   
     y = [0.0] * n
     for i in range(n):
         suma = sum(L[i][j] * y[j] for j in range(i))
         y[i] = b[i] - suma
 
-    # 4. Resolver Ux = y (Sustitución hacia atrás - Igual que Gauss)
+    
     x = [0.0] * n
     for i in range(n - 1, -1, -1):
         if U[i][i] == 0:
@@ -41,9 +41,6 @@ def descomposicion_lu(A, b):
 
     return x, L, U
 
-# =================================================================
-# ÁREA DE PRUEBAS
-# =================================================================
 
 if __name__ == "__main__":
     

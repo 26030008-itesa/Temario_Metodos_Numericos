@@ -9,18 +9,18 @@ def gauss_jordan(A, b):
     n = len(b)
     M = []
     
-    # Tolerancia ajustada para los errores de redondeo al guardar en .txt (6 decimales)
+  
     tolerancia = 1e-4  
     
-    # --- 1. Crear matriz aumentada ---
+   
     for i in range(n):
         fila = list(A[i])
         fila.append(b[i])
         M.append(fila)
         
-    # --- 2. Eliminación Gauss-Jordan ---
+   
     for i in range(n):
-        # Pivoteo parcial
+        
         max_row = i
         for k in range(i + 1, n):
             if abs(M[k][i]) > abs(M[max_row][i]):

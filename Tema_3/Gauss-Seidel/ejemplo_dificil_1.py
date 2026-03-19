@@ -1,6 +1,6 @@
 import os
 import time
-import math  # <-- 1. Agregamos esta librería nativa para detectar errores matemáticos
+import math  
 
 def ordenar_diagonal(A, b):
     n = len(b)
@@ -51,14 +51,13 @@ def gauss_seidel(A, b, max_iteraciones=1000, tolerancia=1e-4):
                 if i != j:
                     suma += A[i][j] * x[j]
             
-            # Calculamos el nuevo valor
+           
             x[i] = (b[i] - suma) / A[i][i]
             
-            # --- 2. NUESTRA ALARMA CONTRA INCENDIOS ---
-            # Si el número crece tanto que Python lo declara Infinito o 'nan', abortamos.
+           
             if math.isinf(x[i]) or math.isnan(x[i]):
                 raise ValueError(f"¡Explosión Matemática! Los números se fueron al infinito en la iteración {iteracion + 1}.")
-            # ------------------------------------------
+         
             
             error_actual = abs(x[i] - x_viejo)
             
@@ -71,9 +70,7 @@ def gauss_seidel(A, b, max_iteraciones=1000, tolerancia=1e-4):
             
     raise ValueError(f"El método NO convergió después de {max_iteraciones} iteraciones.")
 
-# =================================================================
-# LECTURA DEL ARCHIVO Y RESOLUCIÓN
-# =================================================================
+
 
 if __name__ == "__main__":
     directorio_script = os.path.dirname(os.path.abspath(__file__))
@@ -115,7 +112,7 @@ if __name__ == "__main__":
     except FileNotFoundError:
         print(f"Error: No se encontró '{nombre_archivo}'.")
     except ValueError as error:
-        # 3. Aquí es donde aterrizará nuestro programa cuando explote en la iteración 7
+      
         fin = time.perf_counter()
         tiempo_total = fin - inicio
         print("-" * 30)

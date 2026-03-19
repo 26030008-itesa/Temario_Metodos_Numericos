@@ -1,42 +1,65 @@
-# Unidad 2: Metodos de solucion de ecuaciones no lineales
+# Tema 2: Algoritmos para la Aproximación de Raíces
+
+[cite_start]Este apartado detalla los fundamentos teóricos y las fórmulas aplicadas para resolver ecuaciones no lineales de la forma $f(x) = 0$[cite: 2]. [cite_start]El objetivo es encontrar el valor de $x$ que anula la función, una operación crítica para simulaciones y optimización en ingeniería[cite: 2].
+
+## 1. Métodos Cerrados (o de Intervalo)
+
+[cite_start]Estos métodos requieren de un intervalo inicial $[a, b]$ donde se sospecha que se encuentra la raíz[cite: 2]. [cite_start]Se basan en el **Teorema de Bolzano**, el cual dicta que si una función continua cambia de signo en los extremos del intervalo, existe al menos una raíz real en ese espacio[cite: 2].
+
+### A. Método de Bisección
+Es el algoritmo más elemental y seguro. [cite_start]Consiste en dividir el intervalo a la mitad repetidamente hasta reducir el error a un nivel aceptable[cite: 2].
+
+**Fórmula del punto medio:**
+$$x_r = \frac{a + b}{2}$$
+
+* [cite_start]**Criterio de decisión:** Si $f(a) \cdot f(x_r) < 0$, la raíz está en el subintervalo izquierdo; de lo contrario, está en el derecho[cite: 2].
+
+### B. Método de Falsa Posición (Regula Falsi)
+A diferencia de la bisección, este método une los puntos $f(a)$ y $f(b)$ con una línea recta. [cite_start]La intersección de esta línea con el eje $x$ suele estar más cerca de la raíz real[cite: 2].
+
+**Fórmula de aproximación:**
+$$x_r = b - \frac{f(b)(a - b)}{f(a) - f(b)}$$
+
+
 
 ---
 
-## Competencia Especifica
-Solucionar ecuaciones no lineales mediante los diferentes metodos numericos para aplicarlos en la resolucion de problemas de ingenieria.
+## 2. Métodos Abiertos
+
+[cite_start]Estos algoritmos no requieren "encerrar" la raíz en un intervalo; utilizan uno o dos valores iniciales y fórmulas iterativas para proyectar la solución[cite: 2]. [cite_start]Aunque son mucho más rápidos, presentan el riesgo de **diverger** (alejarse de la solución) si el punto inicial es inadecuado o la función es muy irregular[cite: 2].
+
+### A. Método de Newton-Raphson
+[cite_start]Es uno de los métodos más eficientes debido a que utiliza la derivada de la función para encontrar la raíz mediante tangentes[cite: 2].
+
+**Fórmula iterativa:**
+$$x_{i+1} = x_i - \frac{f(x_i)}{f'(x_i)}$$
+
+### B. Método de la Secante
+Se utiliza cuando calcular la derivada de la función es difícil o costoso computacionalmente. [cite_start]Sustituye la derivada por una aproximación basada en dos puntos previos[cite: 2].
+
+**Fórmula iterativa:**
+$$x_{i+1} = x_i - \frac{f(x_i)(x_{i-1} - x_i)}{f(x_{i-1}) - f(x_i)}$$
+
+### C. Iteración de Punto Fijo
+Consiste en transformar la ecuación $f(x) = 0$ a la forma $x = g(x)$. [cite_start]El algoritmo busca el valor donde la entrada es igual a la salida[cite: 2].
+
+**Fórmula iterativa:**
+$$x_{i+1} = g(x_i)$$
+
+
 
 ---
 
-## Metodos Implementados
+## Diferencias Técnicas
 
-### Metodos Cerrados (Intervalos)
-Estos metodos requieren de un intervalo inicial [a, b] donde se cumpla el **Teorema de Bolzano** ($f(a) * f(b) < 0$) para garantizar la existencia de al menos una raiz.
-
-1. **Metodo de Biseccion:** Divide sistematicamente el intervalo a la mitad hasta alcanzar la tolerancia deseada.
-2. **Metodo de Regla Falsa:** Utiliza una linea secante para aproximar la raiz de forma mas eficiente que la biseccion.
-   * Formula: $$x_r = b - \frac{f(b)(a - b)}{f(a) - f(b)}$$
-
-### Metodos Abiertos
-A diferencia de los metodos cerrados, estos no requieren encerrar la raiz, lo que los hace mas rapidos pero con riesgo de divergencia.
-
-1. **Metodo de Newton-Raphson:** Emplea la derivada de la funcion para proyectar la siguiente aproximacion mediante una recta tangente.
-2. **Metodo de la Secante:** Similar a Newton-Raphson pero sustituye la derivada por una aproximacion basada en dos puntos iniciales.
+| Característica | Métodos Cerrados | Métodos Abiertos |
+| :--- | :--- | :--- |
+| **Puntos iniciales** | [cite_start]Requieren un intervalo $[a, b]$[cite: 2]. | [cite_start]Uno o dos puntos (no rodean la raíz)[cite: 2]. |
+| **Convergencia** | [cite_start]Siempre convergen si hay una raíz[cite: 2]. | [cite_start]Pueden fallar (divergencia)[cite: 2]. |
+| **Velocidad** | [cite_start]Lenta (lineal)[cite: 2]. | [cite_start]Muy rápida (cuadrática en Newton)[cite: 2]. |
+| **Estabilidad** | [cite_start]Alta[cite: 2]. | [cite_start]Depende del valor inicial[cite: 2]. |
 
 ---
-
-## Analisis de Implementacion y Control de Errores
-
-Durante el desarrollo de las practicas en Excel, se identificaron puntos criticos para la correcta ejecucion de los algoritmos:
-
-* **Jerarquia de Operaciones:** En la implementacion de la Regla Falsa en Excel, es mandatorio agrupar el denominador entre parentesis `/(f(a)-f(b))` para evitar que el software realice calculos erroneos y provoque divergencia (error #NUM!).
-* **Validacion de Continuidad:** Se demostro que el Teorema de Bolzano es invalido si la funcion presenta discontinuidades o asintotas en el intervalo elegido (ejemplo: x=3 en la funcion 1/(x-3)), lo que puede generar resultados erroneos o "raices fantasmales".
-* **Criterio de Parada:** Se utiliza el error relativo porcentual para detener las iteraciones cuando la aproximacion es suficientemente precisa para los requerimientos de ingenieria.
-
----
-
-## Casos de Prueba
-* **Funcion Polinomica:** $2x^2 - 7x$ en el intervalo [2, 4] con raiz real en 3.5.
-* **Funcion Trascendente:** $(1/(x-3)) + cos(x)$ analizada para detectar fallos por asintotas verticales.
 
 ---
 [Volver al menu principal](../README.md)

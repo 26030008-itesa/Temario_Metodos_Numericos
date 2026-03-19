@@ -4,51 +4,43 @@ def gauss_jordan(A, b):
     
     n = len(b)
     M = []
-    tolerancia = 1e-10  # Mantenemos nuestra defensa contra decimales basura
-    
-    # --- 1. Crear la matriz aumentada M = [A | b] ---
+    tolerancia = 1e-10  
     for i in range(n):
         fila = list(A[i])
         fila.append(b[i])
         M.append(fila)
         
-    # --- 2. Proceso de Gauss-Jordan ---
+   
     for i in range(n):
-        # Pivoteo parcial (Igual que en Gauss)
+       
         max_row = i
         for k in range(i + 1, n):
             if abs(M[k][i]) > abs(M[max_row][i]):
                 max_row = k
                 
-        # Validación de matriz singular con tolerancia
+       
         if abs(M[max_row][i]) < tolerancia:
             raise ValueError(f"El sistema no tiene solución única. El pivote en la columna {i+1} es muy cercano a cero.")
             
-        # Intercambiar la fila actual con la fila del pivote
+       
         M[i], M[max_row] = M[max_row], M[i]
         
-        # a) Convertir el pivote actual en 1 (Dividiendo toda la fila entre el pivote)
+       
         pivote = M[i][i]
         for k in range(i, n + 1):
             M[i][k] /= pivote
             
-        # b) Hacer ceros ARRIBA y ABAJO del pivote
+       
         for j in range(n):
-            if i != j:  # Si no es la fila del pivote actual
+            if i != j:  
                 factor = M[j][i]
                 for k in range(i, n + 1):
                     M[j][k] -= factor * M[i][k]
                     
-    # --- 3. Extraer la solución ---
-    # Como la matriz ahora es una diagonal de 1s, la última columna ES la solución.
-    # Ya no necesitamos el bloque de "Sustitución hacia atrás"
+    
     x = [M[i][n] for i in range(n)]
         
     return x
-
-# =================================================================
-# ÁREA DE PRUEBAS
-# =================================================================
 
 if __name__ == "__main__":
 
