@@ -13,7 +13,7 @@ El curso se divide en cinco unidades tematicas. Cada carpeta contiene la documen
 | :--- | :--- | :--- | 
 | [**Unidad 1**](./Tema%201/) | Introduccion a los metodos numericos | Analisis de tipos de errores, precision y cifras significativas. | 
 | [**Unidad 2**](./Tema_2/) | Ecuaciones no lineales | Implementacion de metodos de intervalos (Biseccion, Regla Falsa) y metodos abiertos. | 
-| **Unidad 3** |(./Tema_3) Sistemas de ecuaciones lineales | Solucion de sistemas mediante metodos directos e iterativos. | Pendiente |
+| **Unidad 3**(./Tema_3)|  Sistemas de ecuaciones lineales | Solucion de sistemas mediante metodos directos e iterativos. | Pendiente |
 | **Unidad 4** | Diferenciacion e integracion numerica | Tecnicas de aproximacion para derivadas e integrales definidas. | Pendiente |
 | **Unidad 5** | Ecuaciones diferenciales | Metodos de solucion para problemas de valor inicial. | Pendiente |
 
