@@ -1,10 +1,4 @@
-¡Claro! He limpiado las etiquetas de citación y optimizado el formato para que se vea impecable en GitHub, utilizando bloques de código con resaltado de sintaxis y ecuaciones en LaTeX.
 
-Aquí tienes el código Markdown listo para copiar:
-
----
-
-```markdown
 # Tema 2: Algoritmos para la Aproximación de Raíces
 
 En el análisis numérico, encontrar la raíz de una función $f(x) = 0$ consiste en determinar el valor de la variable independiente que anula la función. Para un ingeniero, esto es esencial para resolver problemas donde no existe una solución analítica directa.
@@ -113,29 +107,3 @@ Función Secante(x0, x1, tol):
     Retornar x1
 Fin Función
 ```
-
-### C. Iteración de Punto Fijo
-**¿Qué es?** Consiste en transformar la ecuación $f(x) = 0$ en la forma $x = g(x)$. El método busca el punto donde la entrada y la salida de la función son iguales.
-
-**Algoritmo:**
-1. Despejar $x$ para encontrar la función $g(x)$.
-2. Elegir una semilla o valor inicial $x_0$.
-3. Calcular $x_{i+1} = g(x_i)$.
-4. Iterar hasta que el valor se estabilice (el error sea menor a la tolerancia).
-
-**Pseudocódigo:**
-```text
-Función PuntoFijo(x0, tol):
-    Hacer:
-        x_nuevo = g(x0)
-        error = abs(x_nuevo - x0)
-        x0 = x_nuevo
-    Mientras error > tol
-    Retornar x0
-Fin Función
-```
-```
-
----
-
-¿Te gustaría que agregue una tabla comparativa al final para resaltar las ventajas y desventajas de cada método? Sería un gran detalle para tu repositorio.
