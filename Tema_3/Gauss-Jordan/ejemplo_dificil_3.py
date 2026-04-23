@@ -26,39 +26,36 @@ def gauss_jordan(A, b):
             if abs(M[k][i]) > abs(M[max_row][i]):
                 max_row = k
                 
-        # Validar matriz singular con la tolerancia
+       
         if abs(M[max_row][i]) < tolerancia:
             raise ValueError(f"El sistema no tiene solución única. El pivote en la columna {i+1} es muy cercano a cero.")
             
         M[i], M[max_row] = M[max_row], M[i]
         
-        # Convertir el pivote en 1
+       
         pivote = M[i][i]
         for k in range(i, n + 1):
             M[i][k] /= pivote
             
-        # Hacer ceros ARRIBA y ABAJO del pivote
+       
         for j in range(n):
             if i != j:
                 factor = M[j][i]
                 for k in range(i, n + 1):
                     M[j][k] -= factor * M[i][k]
                     
-    # --- 3. Extraer la solución directamente de la última columna ---
+   
     x = [M[i][n] for i in range(n)]
         
     return x
 
-# =================================================================
-# LECTURA DEL ARCHIVO Y RESOLUCIÓN
-# =================================================================
 
 if __name__ == "__main__":
-    # 1. Rutas automáticas hacia la carpeta Tema_3
+   
     directorio_script = os.path.dirname(os.path.abspath(__file__))
     directorio_padre = os.path.dirname(directorio_script)
     
-    # *** CAMBIA ESTE NOMBRE PARA PROBAR LOS DISTINTOS CASOS ***
+   
     nombre_archivo = "matriz_dominante_desordenada.txt" 
     
     ruta_completa = os.path.join(directorio_padre, nombre_archivo)
@@ -69,7 +66,7 @@ if __name__ == "__main__":
     print(f"Buscando el archivo en:\n{ruta_completa}\n")
     
     try:
-        # 2. Leer la matriz gigante
+       
         with open(ruta_completa, "r") as archivo:
             for linea in archivo:
                 numeros = [float(x) for x in linea.split()]
