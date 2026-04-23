@@ -1,4 +1,3 @@
-Claro que sí. He generado el archivo README.md siguiendo rigurosamente las especificaciones de estructura, estilo técnico y notación solicitadas para tu repositorio.
 
 # Tema X: Métodos de Integración Numérica
 
