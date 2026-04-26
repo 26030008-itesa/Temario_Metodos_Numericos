@@ -1,5 +1,5 @@
 
-# Tema 4: Métodos de Integración Numérica
+# Tema 4 : Métodos de Integración Numérica
 
 Este repositorio contiene la fundamentación teórica, algoritmos y pseudocódigos de los métodos más utilizados en el análisis numérico para la aproximación de derivadas e integrales definidas. Estos métodos son esenciales cuando se trabaja con funciones cuya antiderivada es desconocida o cuando se dispone únicamente de un conjunto discreto de datos experimentales.
 
